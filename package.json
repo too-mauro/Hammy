@@ -1,0 +1,11 @@
+{
+  "name": "hammy",
+  "version": "1.0.0",
+  "description": "A wholesome Discord bot!~",
+  "main": "index.js",
+  "author": "Joe Mauro",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  }
+}
