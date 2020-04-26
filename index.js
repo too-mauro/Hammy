@@ -4,8 +4,6 @@ const { Client } = require("discord.js");
 const { token, ownerID, loggingChannel } = require("./settings.json");
 const bot = new Client();
 
-var counter = 0;
-let luckyNum = 51;
 const purpleHeart = '💜';
 const brokenHeart = "<:hamzasux:699845663713918997>";
 const sayings = [
@@ -16,7 +14,8 @@ const sayings = [
   "You're doing the best you can!\n<('. '<)",
   "oh dear.",
   "Hope <name> has a wonderful day! <('u '<)",
-  "c('u 'c)"
+  "c('u 'c)",
+  `(>' u')> ${purpleHeart}\nWe're always here for you!`
 ];
 
 // Logs the bot into the Discord platform.
@@ -42,9 +41,7 @@ bot.on("message", message => {
   else if (!message.guild.available) return;
 
   if (message.content.includes(purpleHeart)) {
-    let sentence = sayings[counter % sayings.length];
-    if (counter % luckyNum == luckyNum - 1) return `${brokenHeart} <('_ '<)`;
-    counter++;
+    let sentence = sayings[(Math.floor(Math.random() * (Math.floor(sayings.length) - Math.ceil(1) + 1) ) + Math.ceil(1)) - 1];
     if (sentence == sayings[0]) {
       // replace the placeholder numbers to the corresponding time of day
       var date = new Date();
