@@ -1,6 +1,11 @@
 # HammyBot Change Log
 This document serves as the complete changelog for HammyBot's development. All versions listed here record the changes that have occurred between versions uploaded to this repository.
 
+## v1.1.1
+### Minor Updates
+- Added one new phrase
+- "Hope <name> has a wonderful day!" message now uses member's nickname if applicable
+
 ## v1.1
 ### Major Updates
 - Main `index.js` file cleaned up, moved events to */events* directory

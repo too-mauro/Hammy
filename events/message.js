@@ -41,7 +41,7 @@ module.exports = async (bot, message) => {
 
             case file.phrases[6]:
                 // replace <name> with message author's username
-                return message.channel.send(sentence.replace('<name>', `**${message.author.username}**`));
+                return message.channel.send(sentence.replace('<name>', `**${message.guild.member(message.author).displayName}**`));
                 break;
 
             case file.phrases[9]:
