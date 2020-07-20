@@ -1,6 +1,17 @@
 # HammyBot Change Log
 This document serves as the complete changelog for HammyBot's development. All versions listed here record the changes that have occurred between versions uploaded to this repository.
 
+## v1.2
+### Major Updates
+- Added four commands: `botinfo`, `help`, `invite`, and `shutdown` (last one is owner-specific)
+- Bot prefix changed from "!" to tilde ("~")
+- Colors JSON file added to compliment embed messages
+- One new phrase added!
+### Minor Updates
+- Code cleanup in *message* event
+- Ready message changed and set in *config/settings.json* file
+- 'removeEndingZeroes' function moved to new *config/util.js* file for use in *ready* event and `botinfo` command
+
 ## v1.1.1
 ### Minor Updates
 - Added one new phrase

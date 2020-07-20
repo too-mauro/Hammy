@@ -1,20 +1,22 @@
-const { loggingChannel } = require("../config/settings.json");
-const { version } = require("../package.json");
+/* This event runs whenever the bot starts up. This sets the bot user's status to
+"online", listening to the purple heart emoji, and sends a message to the
+pre-defined log channel stating the bot user is ready for use. */
+
+const fs = require("fs");
+const { removeEndingZeroes } = require("../config/util.js");
 
 module.exports = async (bot) => {
 
+  const botConfig = JSON.parse(fs.readFileSync("./config/settings.json", "utf8"));
+  const { version } = JSON.parse(fs.readFileSync("./package.json", "utf8"));
+
   // Set bot's status to online.
   bot.user.setStatus("online");
-  console.log(`${bot.user.username} v${removeEndingZeroes(version)} is online and ready!`);
+  bot.user.setActivity(botConfig.purpleHeart, { type: "LISTENING" });
+  console.log(botConfig.startupMessage.replace("vX", `v${removeEndingZeroes(version)}`));
 
   // Send a startup message to the log channel.
-  try { bot.channels.cache.get(loggingChannel).send(`**${bot.user.username} v${removeEndingZeroes(version)}** is online and ready!`); }
+  try { bot.channels.cache.get(botConfig.loggingChannel).send(botConfig.startupMessage.replace("vX", `v${removeEndingZeroes(version)}`)); }
   catch(e) { console.log("Couldn't send the start-up message to the log channel!\n", e); }
 
-}
-
-function removeEndingZeroes(version) {
-  // If the third digit in the version number is 0, remove it from the string. Otherwise, leave it alone.
-  if (version.split(".")[2] == 0) return version.slice(0, version.length - 2);
-  return version;
 }
