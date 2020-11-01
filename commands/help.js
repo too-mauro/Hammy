@@ -1,8 +1,6 @@
-/*
-This command shows all the commands the bot currently offers. Without an argument,
+/* This command shows all the commands the bot currently offers. Without an argument,
 it shows all of them by category, and shows more information about each if used
-as an argument.
-*/
+as an argument. */
 
 const fs = require("fs");
 const { MessageEmbed } = require("discord.js");

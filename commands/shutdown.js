@@ -1,3 +1,5 @@
+/* This command shuts down the bot. Restricted to bot owner only. */
+
 const { ownerID } = require("../config/settings.json");
 
 module.exports = {

@@ -46,5 +46,5 @@ function readableUptime(uptime) {
     if (hrs < 1) { return `${min.padStart(2, '0')}m : ${sec.padStart(2, '0')}s`; }
     return `${hrs}h : ${min.padStart(2, '0')}m : ${sec.padStart(2, '0')}s`;
   }
-  return `${day}d : ${hrs % 24}h : ${min.padStart(2, '0')}m : ${sec.padStart(2, '0')}s`;
+  return `${day}d : ${(hrs % 24).toString().padStart(2, '0')}h : ${min.padStart(2, '0')}m : ${sec.padStart(2, '0')}s`;
 }
