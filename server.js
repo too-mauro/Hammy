@@ -1,4 +1,4 @@
-/* This is HammyBot's main server file. All other files used for
+/* This is Hammy's main server file. All other files used for
 commands and events run as if they are included in this file.
 
 This file initializes a Discord.js Client and grabs the bot token that's

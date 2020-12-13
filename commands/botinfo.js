@@ -12,7 +12,7 @@ module.exports = {
         name: "botinfo",
         aliases: ["bi", "binfo"],
         usage: "",
-        description: "Gets information about HammyBot!"
+        description: "Gets information about Hammy!"
     },
     run: async (bot, message, args) => {
 
@@ -24,7 +24,7 @@ module.exports = {
           .setDescription("Getting some info for you, hang on!~");
       message.channel.send({embed}).then(m => {
         embed.setThumbnail(bot.user.displayAvatarURL())
-            .setDescription(`Vibing with ${bot.users.cache.size} users on ${bot.guilds.cache.size} servers!`)
+            .setDescription(`Vibing on ${bot.guilds.cache.size} servers!`)
             .addField("Current Uptime 🕐", readableUptime(bot.uptime), false)
             .addField("Bot Latency", `${m.createdTimestamp - message.createdTimestamp} ms`, true)
             .addField("API Latency", `${Math.round(bot.ws.ping)} ms`, true)
@@ -46,5 +46,5 @@ function readableUptime(uptime) {
     if (hrs < 1) { return `${min.padStart(2, '0')}m : ${sec.padStart(2, '0')}s`; }
     return `${hrs}h : ${min.padStart(2, '0')}m : ${sec.padStart(2, '0')}s`;
   }
-  return `${day}d : ${(hrs % 24).toString().padStart(2, '0')}h : ${min.padStart(2, '0')}m : ${sec.padStart(2, '0')}s`;
+  return `${day}d : ${hrs % 24}h : ${min.padStart(2, '0')}m : ${sec.padStart(2, '0')}s`;
 }

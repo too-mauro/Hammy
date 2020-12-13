@@ -19,7 +19,7 @@ module.exports = {
           .setThumbnail(bot.user.displayAvatarURL())
           .addField("**Support Server**", "[Come chill in the Rockin' Treehouse!](https://discord.com/invite/UA6tK26)")
           .addField("**Bot Invite Link**", "[Invite me to your server!](https://discord.com/oauth2/authorize?&client_id=702620769284390992&scope=bot&permissions=264192)")
-          .addField("**GitHub Repository**", "[Check out my source code!](https://github.com/too-mauro/HammyBot)")
+          .addField("**GitHub Repository**", "[Check out my source code!](https://github.com/too-mauro/Hammy)")
           .setFooter(bot.user.username, bot.user.displayAvatarURL());
 
       return message.channel.send(embed);

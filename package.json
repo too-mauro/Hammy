@@ -1,21 +1,21 @@
 {
-  "name": "hammybot",
-  "version": "1.2.1",
+  "name": "hammy",
+  "version": "1.2.2",
   "description": "A wholesome Discord bot!~",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/too-mauro/hammybot.git"
+    "url": "git+https://github.com/too-mauro/hammy.git"
   },
   "author": "Joe Mauro",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/too_mauro/hammybot/issues"
+    "url": "https://github.com/too_mauro/hammy/issues"
   },
-  "homepage": "https://github.com/too_mauro/hammybot#readme",
+  "homepage": "https://github.com/too_mauro/hammy#readme",
   "dependencies": {
     "common-tags": "^1.8.0",
-    "discord.js": "^12.4.1",
+    "discord.js": "^12.5.1",
     "dotenv": "^8.2.0"
   }
 }

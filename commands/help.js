@@ -13,7 +13,7 @@ module.exports = {
         name: "help",
         aliases: ["h", "commands"],
         usage: "(command)",
-        description: "Shows all the commands that HammyBot has to offer."
+        description: "Shows all the commands that Hammy has to offer."
     },
     run: async (bot, message, args) => {
 

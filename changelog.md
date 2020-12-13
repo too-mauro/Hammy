@@ -1,5 +1,15 @@
-# HammyBot Change Log
-This document serves as the complete changelog for HammyBot's development. All versions listed here record the changes that have occurred between versions uploaded to this repository.
+# Hammy Change Log
+This document serves as the complete changelog for Hammy's development. All versions listed here record the changes that have occurred between versions uploaded to this repository.
+
+## v1.2.2
+### Major Updates
+- HammyBot repository and bot shortened to Hammy
+- README file updated
+### Minor Updates
+- Discord.js updated to v12.5.1
+- GitHub link in `invite` command updated to match repository name
+- All instances of HammyBot shortened to new name
+- Removed cached user count from `botinfo` command
 
 ## v1.2.1
 ### Minor Updates
