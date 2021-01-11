@@ -1,6 +1,12 @@
 # Hammy Change Log
 This document serves as the complete changelog for Hammy's development. All versions listed here record the changes that have occurred between versions uploaded to this repository.
 
+## v1.3
+### Major Updates
+- Mentioning the bot now returns the universal bot prefix
+- Two new commands: `pun` and `evaluate` (restricted to bot owner)
+- Seven new phrases added, now for a total of 20
+
 ## v1.2.2
 ### Major Updates
 - HammyBot repository and bot shortened to Hammy

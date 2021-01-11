@@ -6,6 +6,12 @@ module.exports = async (bot, message) => {
     if (message.author.bot || message.channel.type == "dm") return;
     else if (!message.guild.available) return;
 
+    // If a user mentions the bot outside of a command, return the server's prefix.
+    const mentionRegex = new RegExp(`^(<@!?${bot.user.id}>)\\s*`);
+    if (mentionRegex.test(message.content)) {
+      return message.channel.send(`(>' u')>  My prefix is: \` ${serverConfig.prefix} \``);
+    }
+
     /* Get the prefix from the settings.json file and check if the message starts with that.
     If it does, try to find a command, then run it if one's found. */
     const botConfig = JSON.parse(fs.readFileSync("./config/settings.json", "utf8"));
