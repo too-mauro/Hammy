@@ -16,7 +16,7 @@ module.exports = {
     }
     catch (err) {
       console.error(err);
-      return message.channel.send("I can't think of something right now ;w;\nTry again later!");
+      return message.channel.send("I can't think of something right now ;w;\nTry again later!~");
     }
 
   }

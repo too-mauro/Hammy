@@ -1,8 +1,8 @@
 /* This command returns an invite link to the support server, the bot, and a link
 to the GitHub repository. */
 
-const { MessageEmbed } = require("discord.js");
-const { purple_light } = require("../config/colors.json");
+const {MessageEmbed} = require("discord.js");
+const {purple_light} = require("../config/colors.json");
 
 module.exports = {
     config: {

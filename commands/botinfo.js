@@ -2,10 +2,10 @@
 it serves, the number of servers it's in, the API Latency, uptime, the server's
 current prefix, and the bot's version (from the package.json file). */
 
-const fs = require("fs");
-const { MessageEmbed } = require("discord.js");
-const { purple_medium } = require("../config/colors.json");
-const { removeEndingZeroes } = require("../config/util.js");
+const {readFileSync} = require("fs");
+const {MessageEmbed} = require("discord.js");
+const {purple_medium} = require("../config/colors.json");
+const {removeEndingZeroes} = require("../config/util.js");
 
 module.exports = {
     config: {
@@ -16,8 +16,8 @@ module.exports = {
     },
     run: async (bot, message, args) => {
 
-      const version = JSON.parse(fs.readFileSync("./package.json", "utf8")).version;
-      const { prefix } = JSON.parse(fs.readFileSync(`./config/settings.json`, 'utf8'));
+      const version = JSON.parse(readFileSync("./package.json", "utf8")).version;
+      const { prefix } = JSON.parse(readFileSync(`./config/settings.json`, 'utf8'));
       const embed = new MessageEmbed()
           .setColor(purple_medium)
           .setTitle(`${bot.user.username} Info`)

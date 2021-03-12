@@ -1,6 +1,6 @@
 /* This command shuts down the bot. Restricted to bot owner only. */
 
-const { ownerID } = require("../config/settings.json");
+const {ownerID} = require("../config/settings.json");
 
 module.exports = {
     config: {
@@ -11,7 +11,8 @@ module.exports = {
     },
     run: async (bot, message, args) => {
 
-      if (message.author.id != ownerID) return message.channel.send(`**${message.author.username}**, you must be the bot owner to run this command.`);
+      if (message.author.id != ownerID) {
+        return message.channel.send(`Can't let you do that **${message.author.username}**, you have to be bot owner uwu`);
 
       message.channel.send("Are you *sure* you want to shut me off? (y/n)")
       .then(() => {

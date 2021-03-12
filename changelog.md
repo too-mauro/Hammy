@@ -1,6 +1,15 @@
 # Hammy Change Log
 This document serves as the complete changelog for Hammy's development. All versions listed here record the changes that have occurred between versions uploaded to this repository.
 
+## v1.4
+### Major Updates
+- Removed the `evaluate` command, was unneeded
+- Keysmash phrase now gets randomized instead of being a static phrase
+- New command: `killmode`, try if you dare ;)
+### Minor Updates
+- Tidied up command code
+- Merged phraseSwitch function in message event to main module
+
 ## v1.3
 ### Major Updates
 - Mentioning the bot now returns the universal bot prefix

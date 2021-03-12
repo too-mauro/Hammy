@@ -2,11 +2,10 @@
 it shows all of them by category, and shows more information about each if used
 as an argument. */
 
-const fs = require("fs");
-const { MessageEmbed } = require("discord.js");
-const { readdirSync } = require("fs");
-const { stripIndents } = require("common-tags");
-const { purple_light } = require("../config/colors.json");
+const {MessageEmbed} = require("discord.js");
+const {readdirSync} = require("fs");
+const {stripIndents} = require("common-tags");
+const {purple_light} = require("../config/colors.json");
 
 module.exports = {
     config: {
@@ -18,7 +17,7 @@ module.exports = {
     run: async (bot, message, args) => {
 
       // get server's prefix
-      const {prefix} = JSON.parse(fs.readFileSync(`./config/settings.json`, 'utf8'));
+      const {prefix} = JSON.parse(readFileSync(`./config/settings.json`, 'utf8'));
 
       const embed = new MessageEmbed()
           .setColor(purple_light)
