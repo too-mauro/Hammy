@@ -13,6 +13,7 @@ module.exports = {
 
       if (message.author.id != ownerID) {
         return message.channel.send(`Can't let you do that **${message.author.username}**, you have to be bot owner uwu`);
+      }
 
       message.channel.send("Are you *sure* you want to shut me off? (y/n)")
       .then(() => {
