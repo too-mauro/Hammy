@@ -2,7 +2,7 @@ module.exports = {
     config: {
         name: "killmode",
         description: "Try doing this for a surprise! ~( ^ w ^ )~",
-        aliases: ["murdermode", "uwukill"],
+        aliases: ["murdermode", "uwukill", "genuwucide"],
         usage: ""
     },
     run: async (bot, message, args) => {

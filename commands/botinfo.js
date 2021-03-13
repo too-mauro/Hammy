@@ -17,7 +17,7 @@ module.exports = {
     run: async (bot, message, args) => {
 
       const version = JSON.parse(readFileSync("./package.json", "utf8")).version;
-      const { prefix } = JSON.parse(readFileSync(`./config/settings.json`, 'utf8'));
+      const {prefix} = JSON.parse(readFileSync(`./config/settings.json`, 'utf8'));
       const embed = new MessageEmbed()
           .setColor(purple_medium)
           .setTitle(`${bot.user.username} Info`)

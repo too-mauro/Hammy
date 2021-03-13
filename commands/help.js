@@ -3,7 +3,7 @@ it shows all of them by category, and shows more information about each if used
 as an argument. */
 
 const {MessageEmbed} = require("discord.js");
-const {readdirSync} = require("fs");
+const {readFileSync, readdirSync} = require("fs");
 const {stripIndents} = require("common-tags");
 const {purple_light} = require("../config/colors.json");
 

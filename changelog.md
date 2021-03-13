@@ -1,6 +1,13 @@
 # Hammy Change Log
 This document serves as the complete changelog for Hammy's development. All versions listed here record the changes that have occurred between versions uploaded to this repository.
 
+## v1.4.1
+### Minor Updates
+- Added an alias to `killmode`
+### Bug-fixes
+- Fixed a problem with the `help` command
+- Fixed a syntax error in the `shutdown` command
+
 ## v1.4
 ### Major Updates
 - Removed the `evaluate` command, was unneeded
