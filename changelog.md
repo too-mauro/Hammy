@@ -1,6 +1,15 @@
 # Hammy Change Log
 This document serves as the complete changelog for Hammy's development. All versions listed here record the changes that have occurred between versions uploaded to this repository.
 
+## v1.5
+### Major Updates
+- More administrative commands added (load, unload, reload)
+- Added two more phrases
+### Minor Updates
+- `help` command hides administrative commands
+- Updated Discord.js to v12.5.3
+- Some minor code tweaks
+
 ## v1.4.1
 ### Minor Updates
 - Added an alias to `killmode`

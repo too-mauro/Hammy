@@ -7,7 +7,8 @@ module.exports = {
       name: "pun",
       description: "I'll tell you a pun, why not?",
       usage: "",
-      aliases: ["p", "j", "joke"]
+      aliases: ["p", "j", "joke"],
+      category: "general"
   },
   run: async (bot, message, args) => {
     try {

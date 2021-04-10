@@ -12,7 +12,8 @@ module.exports = {
         name: "botinfo",
         aliases: ["bi", "binfo"],
         usage: "",
-        description: "Gets information about Hammy!"
+        description: "Gets information about Hammy!",
+        category: "general"
     },
     run: async (bot, message, args) => {
 

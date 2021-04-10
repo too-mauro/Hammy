@@ -9,7 +9,8 @@ module.exports = {
         name: "invite",
         description: "Useful links for joining the support server, inviting the bot, and checking out the GitHub code.",
         aliases: ["inv", "links", "link"],
-        usage: ""
+        usage: "",
+        category: "general"
     },
     run: async (bot, message, args) => {
 

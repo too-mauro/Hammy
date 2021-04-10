@@ -30,7 +30,7 @@ module.exports = async (bot, message) => {
     if (message.content.includes(botConfig.purpleHeart)) {
       const phrases = JSON.parse(readFileSync("./config/phrases.json", "utf8"));
       const number = (Math.floor(Math.random() * (Math.floor(phrases.phrases.length) - Math.ceil(1) + 1)) + Math.ceil(1)) - 1;
-      let sentence = phrases.phrases[number].toLowerCase();
+      let sentence = phrases.phrases[number];
       if (sentence.includes("<greeting>")) {
         // return a greeting that changes with the time
         sentence = timedGreeting(sentence);
@@ -48,13 +48,13 @@ module.exports = async (bot, message) => {
         // gender-neutral first, then he/him, then she/her
         const roleEval = roleFind(message.member.roles.cache, "They/Them", "He/Him", "She/Her");
         if (roleEval == 1) {
-          sentence = sentence.replace("<gender>", ", king");
+          sentence = sentence.replace(" <gender>", ", king");
         }
         else if (roleEval == 2) {
-          sentence = sentence.replace("<gender>", ", queen");
+          sentence = sentence.replace(" <gender>", ", queen");
         }
         else {
-          sentence = sentence.replace("<gender>", "");
+          sentence = sentence.replace(" <gender>", "");
         }
       }
       else if (sentence.includes("<keysmash>")) {
@@ -96,9 +96,9 @@ function roleFind(roleCache, role1, role2, role3) {
 }
 
 function generateKeysmash(len) {
-    // Generates a random string of characters from the home row.
+    // Generates a random string of characters.
     let smash = "";
-    let charset = "asdfghjkl";
+    let charset = "asdfghjklweiopucmxn";
     for (let i = 0; i < len; i++) {
       smash += charset.charAt(Math.floor(Math.random() * charset.length));
     }

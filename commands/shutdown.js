@@ -7,7 +7,8 @@ module.exports = {
         name: "shutdown",
         aliases: ["sd"],
         usage: "",
-        description: "Shuts down the bot. Restricted to bot owner."
+        description: "Shuts down the bot. Restricted to bot owner.",
+        category: "owner"
     },
     run: async (bot, message, args) => {
 

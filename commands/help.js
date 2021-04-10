@@ -12,7 +12,8 @@ module.exports = {
         name: "help",
         aliases: ["h", "commands"],
         usage: "(command)",
-        description: "Shows all the commands that Hammy has to offer."
+        description: "Shows all the commands that Hammy has to offer.",
+        category: "general"
     },
     run: async (bot, message, args) => {
 
@@ -27,16 +28,20 @@ module.exports = {
           // Show all commands in one message embed.
           embed.setDescription(`Use the command format \`${prefix}help <command>\` to view more info about a command.`);
           const commands = readdirSync("./commands/");
-          embed.addField("Commands", commands.map(c => `\`${c.split(".")[0]}\``).sort().join(" "), false)
-          .addField("Want me to say a phrase?", "Just type a message with a purple heart emoji (💜) in it!", false)
-          .setFooter(`${bot.user.username} | Total Commands: ${bot.commands.size}`, bot.user.displayAvatarURL());
+          let visibleCommands = bot.commands.filter(c => c.config.category.toLowerCase() !== "owner");
+          if (visibleCommands.size > 0) {
+              embed.addField("Commands", visibleCommands.map(c => `\`${c.config.name}\``).sort().join(" "));
+          }
+          else embed.addField("**No commands in this category!**", "\u200b");
+          embed.addField("Want me to say a phrase?", "Just type a message with a purple heart emoji (💜) in it!", false)
+          .setFooter(`${bot.user.username} | Total Commands: ${visibleCommands.size}`, bot.user.displayAvatarURL());
           return message.channel.send({embed});
       }
       else {
           /* Search for a given command name. If there's no result, alert the user that it's an invalid command and check the help message again. Otherwise, show the command name, aliases (if any), usage, and description. */
           let command = bot.commands.get(bot.aliases.get(args[0].toLowerCase()) || args[0].toLowerCase());
           if (!command) {
-            embed.setDescription(`**Couldn't find that command or alias**. Use \`${prefix}help\` for the list of commands.`)
+            embed.setDescription(`**Sorry, I couldn't find that command or alias**. Try doing \`${prefix}help\` to see the commands I respond to!`)
             .setFooter(bot.user.username, bot.user.displayAvatarURL());
             return message.channel.send({embed});
           }
@@ -46,9 +51,8 @@ module.exports = {
           **Command:** ${command.name.slice(0, 1).toUpperCase() + command.name.slice(1)}
           **Description:** ${command.description || "No description provided."}
           **Usage:** ${command.usage ? `\`${prefix}${command.name} ${command.usage}\`` : `\`${prefix}${command.name}\``}
-          **Aliases:** ${command.aliases ? command.aliases.join(", ") : "None."}`);
-          embed.setFooter(bot.user.username, bot.user.displayAvatarURL());
-
+          **Aliases:** ${command.aliases ? command.aliases.join(", ") : "None."}`)
+          .setFooter(bot.user.username, bot.user.displayAvatarURL());
           return message.channel.send({embed});
       }
     }
