@@ -1,6 +1,11 @@
 # Hammy Change Log
 This document serves as the complete changelog for Hammy's development. All versions listed here record the changes that have occurred between versions uploaded to this repository.
 
+## v1.5.0.1 (Hotfix)
+### Minor Updates
+- `dotenv` package updated to v10
+- Fixed a security vulnerability with websocket package via update
+
 ## v1.5
 ### Major Updates
 - More administrative commands added (load, unload, reload)
